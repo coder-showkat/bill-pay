@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baap er Bank</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    'roboto': ['Roboto', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        transparent: 'rgba(255, 255, 255, 0.5)'
+                    },
+                    backgroundColor: {
+                        transparent: 'rgba(255, 255, 255, 0.1)',
+                        transparent2: 'rgba(255, 255, 255, 0.4)',
+                        transparent3: 'rgba(255, 255, 255, 0.2)',
+                    },
+                    boxShadow: {
+                        custom: '0 26px 42px rgba(0, 0, 0, 0.1)',
+                        custom2: '0 26px 42px rgba(0, 0, 0, 0.05)'
+                    },
+                    backgroundImage: {
+                        gradient: 'linear-gradient(-45deg, #f76859, #960cd6)',
+                    },
+                    animation: {
+                        'loading': 'loading 1s linear infinite',
+                        'bgColor': 'bgChange 3s infinite',
+                    }
+                },
+
+                backgroundSize: {
+                    'forAnim': '220% 220%',
+                },
+                keyframes: {
+                    loading: {
+                        '0%': { transform: 'rotate(0deg)' },
+                        '100%': { transform: 'rotate(360deg)' },
+                    },
+                    bgChange: {
+                        '0%': { backgroundPosition: '0% 50%' },
+                        '50%': { backgroundPosition: '100% 50%' },
+                        '100%': { backgroundPosition: '0% 50%' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient animate-bgColor bg-forAnim font-roboto">
+    <div class="container my-10 mx-auto">
+        <h1 class="text-center text-4xl mb-8 px-8 font-semibold text-transparent drop-shadow-lg">Use your coupon code to
+            get <br>30%
+            discount!!!</h1>
+
+        <div
+            class="w-11/12 sm:w-10/12 md:w-3/4 lg:w-1/2 mx-auto bg-transparent shadow-custom flex flex-col sm:items-center justify-center gap-4 py-10 px-6 rounded-sm">
+            <div class="sm:flex items-center">
+                <label for="price" class="font-medium text-xl text-slate-100 drop-shadow-md mr-4 w-36">Price:</label>
+                <input type="number" id="price"
+                    class="bg-transparent shadow-custom2 border-1 border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-md p-2 placeholder:text-transparent text-slate-100 font-semibold w-full sm:w-auto"
+                    placeholder="Input price">
+            </div>
+            <div class="sm:flex items-center">
+                <label for="coupon" class="font-medium text-xl text-slate-100 drop-shadow-md mr-4 w-36">Coupon
+                    Code:</label>
+                <input type="text" id="coupon"
+                    class="bg-transparent shadow-custom2 border-1 border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-md p-2 placeholder:text-transparent text-slate-100 font-semibold w-full sm:w-auto"
+                    placeholder="Type your coupon code">
+            </div>
+            <div class="sm:flex items-center">
+                <label for="pay" class="font-medium text-xl text-slate-100 drop-shadow-md mr-4 w-36">Please
+                    pay:</label>
+                <input type="text" id="pay"
+                    class="bg-transparent shadow-custom2 border-1 border-gray-200 focus:outline-none focus:ring-0 rounded-md p-2 placeholder:text-transparent text-slate-100 font-semibold w-full sm:w-auto"
+                    readonly>
+            </div>
+
+            <div class="flex items-center gap-5 mt-4">
+                <button id="applyBtn"
+                    class="block px-8 py-2 bg-transparent3 shadow-custom font-medium text-slate-100 hover:bg-transparent2 rounded-md cursor-pointer duration-300">Apply</button>
+                <button id="payBtn"
+                    class="block px-8 py-2 bg-transparent3 shadow-custom font-medium text-slate-100 hover:bg-transparent2 rounded-md cursor-pointer duration-300">Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-4 mb-1">
+        <p class="text-center px-8">All rights reserved copyright@2023 Showkat Ali Sam</p>
+    </footer>
+
+    <script src="./utilities.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
