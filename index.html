@@ -34,7 +34,7 @@
                         custom2: '0 26px 42px rgba(0, 0, 0, 0.05)'
                     },
                     backgroundImage: {
-                        gradient: 'linear-gradient(-45deg, #7106aa, #9b6d31)',
+                        gradient: 'linear-gradient(-45deg, #bc8c3a, #7106aa)',
                     },
                     animation: {
                         'loading': 'loading 1s linear infinite',
@@ -43,7 +43,7 @@
                 },
 
                 backgroundSize: {
-                    'forAnim': '220% 220%',
+                    'forAnim': '200% 200%',
                 },
                 keyframes: {
                     loading: {
@@ -51,9 +51,9 @@
                         '100%': { transform: 'rotate(360deg)' },
                     },
                     bgChange: {
-                        '0%': { backgroundPosition: '0% 50%' },
+                        '0%, 100%': { backgroundPosition: '0% 50%' },
                         '50%': { backgroundPosition: '100% 50%' },
-                        '100%': { backgroundPosition: '0% 50%' }
+                        // '100%': { backgroundPosition: '0% 50%' }
                     }
                 }
             }
@@ -74,7 +74,7 @@
     </style>
 </head>
 
-<body class="bg-gradient animate-bgColor bg-forAnim font-roboto">
+<body class="bg-gradient bg-forAnim font-roboto">
     <div class="container my-10 mx-auto">
         <h1 class="text-center text-4xl mb-8 px-8 font-semibold text-transparent drop-shadow-lg">Use your coupon code to
             get <br>30%
