@@ -21,8 +21,11 @@ applyBtn.addEventListener('click', ()=> {
     let priceAmount = Number(Price);
     // let payAmount = pay.value;
     if (couponCode === 'DISC30' && Price !== '') {
-        toastMessage('Congratulations!! You have successfully got 30% discount')
-        pay.value = priceAmount - (priceAmount * 0.30);
+        let loadingTime = (Math.floor(Math.random() * 5 + 4)) * 1000;
+        payLoading('Congratulations!! You have successfully got 30% discount', loadingTime);
+        setTimeout(()=>{
+            pay.value = priceAmount - (priceAmount * 0.30);
+        }, loadingTime);
     } else {
         if (Price === '') {
             pay.value = '';
